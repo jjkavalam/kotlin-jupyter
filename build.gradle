@@ -31,7 +31,7 @@ allprojects {
 
     version = '0.6.0'
 
-    ext.installPath = project.hasProperty('installPath') ? project.getProperty('installPath') : "${System.properties['user.home']}/.ipython/kernels/kotlin"
+    ext.installPath = project.hasProperty('installPath') ? project.getProperty('installPath') : "${System.properties['user.home'].replace('\\','\\\\')}/.ipython/kernels/kotlin"
 }
 
 apply plugin: 'com.github.johnrengelman.shadow'
